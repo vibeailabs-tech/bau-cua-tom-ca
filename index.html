@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bầu Cua Tôm Cá</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦀</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <radialGradient id="gourdBody" cx="38%" cy="32%" r="75%">
+        <stop offset="0" stop-color="#e9f7a3"/>
+        <stop offset=".55" stop-color="#9ccc3c"/>
+        <stop offset="1" stop-color="#4b7414"/>
+      </radialGradient>
+      <symbol id="gourd" viewBox="0 0 64 64">
+        <path d="M32 14 C32 9 34 6 38 4" stroke="#6d4c2f" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M34 10 C40 3 50 5 53 11 C46 14 39 13 34 10 Z" fill="#5fa830"/>
+        <circle cx="32" cy="44" r="17" fill="url(#gourdBody)"/>
+        <circle cx="32" cy="22" r="10" fill="url(#gourdBody)"/>
+        <ellipse cx="25.5" cy="39" rx="4" ry="6.5" fill="#fff" opacity=".35"/>
+        <ellipse cx="28.5" cy="19" rx="2.5" ry="3.5" fill="#fff" opacity=".35"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="app">
+    <header class="topbar">
+      <h1 class="title">Bầu Cua Tôm Cá</h1>
+      <div class="wallet" id="wallet">
+        <span class="wallet-label">Số dư</span>
+        <span class="balance" id="balance">0</span>
+      </div>
+      <button class="icon-btn" id="musicBtn" type="button" title="Bật/tắt nhạc nền">🎵</button>
+      <button class="icon-btn" id="soundBtn" type="button" title="Bật/tắt hiệu ứng âm thanh">🔊</button>
+    </header>
+
+    <main class="layout">
+      <section class="table-area">
+        <div class="plate-wrap" id="plateWrap">
+          <div class="plate">
+            <div class="dice" id="dice"></div>
+          </div>
+          <div class="bowl" id="bowl"></div>
+        </div>
+
+        <div class="message" id="message" role="status" aria-live="polite"></div>
+        <button class="btn primary" id="refillBtn" type="button" hidden>Nạp lại 10.000</button>
+      </section>
+
+      <section class="board" id="board" aria-label="Bàn cược"></section>
+
+      <section class="history">
+        <div class="history-title">Lịch sử</div>
+        <div class="history-list" id="history"></div>
+      </section>
+
+      <section class="controls">
+        <div class="chip-row">
+          <span class="ctl-label">Phỉnh</span>
+          <div class="chips" id="chips"></div>
+          <div class="bet-info">Tổng cược <strong id="totalBet">0</strong></div>
+        </div>
+        <div class="actions">
+          <button class="btn ghost" id="clearBtn" type="button">Xoá cược</button>
+          <button class="btn ghost" id="rebetBtn" type="button">Cược lại</button>
+          <button class="btn primary roll" id="rollBtn" type="button">LẮC</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <details class="rules">
+        <summary>Luật chơi</summary>
+        <ul>
+          <li>Chọn mệnh giá phỉnh, bấm vào các con trên bàn để đặt cược (có thể đặt nhiều con).</li>
+          <li>Bấm <b>LẮC</b> (hoặc phím <b>Space</b>): nhà cái lắc 3 viên xúc xắc rồi mở bát.</li>
+          <li>Mỗi viên ra đúng con bạn đặt: được trả <b>1 lần</b> tiền cược (ra 2 viên ×2, ra 3 viên ×3) và nhận lại tiền gốc.</li>
+          <li>Con bạn đặt không xuất hiện: mất tiền cược.</li>
+          <li>Bấm nút <b>−</b> hoặc chuột phải vào ô để giảm cược.</li>
+        </ul>
+      </details>
+      Trò chơi giải trí, không sử dụng tiền thật.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
